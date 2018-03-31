@@ -105,192 +105,59 @@ input[type="submit"] {
 }
 
 /*----------HEADER------------*/
-
-body > header {
-    text-align: center;
-    width: 100%;
-    height: 40vh;
-    min-height: 220px;
-    background-color: cadetblue;
-
-    color: white;
+.navbar{
+    height: 12vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    z-index: 10
 }
 
-body > header h1 {
-    font-size: 6em;
-}
-
-body > header h2 {
-    color: rgba(255, 255, 255, 0.5)
-}
-
-body > header span {
-    color: white;
-    text-decoration: underline
-}
-
-body > header ._btn {
-    border-color: white;
-    color: white;
-
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
-
-body > header ._btn:hover {
-    background-color: white;
-    color: black
-}
-
-#frase {
-    text-align: center;
-    width: 100%;
-    margin: 20px 0;
-    font-size: 2em;
-    color: gray;
-
-}
-
-/*----------INTRO------------*/
-
-#intro {
-    margin-top: 20px;
-    display: none
-}
-
-#ex {
-    width: 800px;
-    height: 500px;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px
-}
-
-#ex header {
-    border-radius: 10px 10px 0 0;
-    height: 180px;
-    background-color: dimgray;
-    position: relative;
-}
-
-#ex header h1 {
-    color: white;
-    font-size: 2.2em
-}
-
-#ex .tipo {
-    width: 100%;
-    background-color: gainsboro;
-    padding: 5px 0;
-    color: dimgray
-}
-
-#ex header .send-img {
-    height: 35px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
-/*----------HOT LISTS------------*/
-
-#hot-lists ._wrapper > header{
+.navbar-brand{
     display: flex;
-    justify-content: center;
     align-items: center
 }
 
-#hot-lists ._wrapper > header img{
-    height: 35px
+.navbar-brand img{
+    height: 50px;
 }
 
-#hot-lists ._wrapper > header > h1 {
-    text-align: center;
-    margin: 20px 5px;
-    font-size: 2em;
+.navbar-brand h1{
+    font-size: 1.3em;
+    margin: 0 5px;
+    font-weight: 300
 }
 
-.lists {
-    display: flex;
-    justify-content: center
+.navbar-brand span{
+    font-weight: 500
 }
 
-.lists .list {
-    border-radius: 10px;
-    width: 280px;
-    cursor: pointer;
-    transition: 0.5s;
-    margin: 10px;
+main {
+    height: 88vh;
+    width: 100%;
+    position: relative
 }
 
-.lists .list:hover {
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
-    transform: scale(1.01,1.01)
-}
-
-.lists .list header{
-    box-sizing: border-box;
-    padding: 10px;
-
-    border-radius: 10px 10px 0 0;
-
-    min-height: 100px
-}
-
-.lists .list img {
-    max-height: 80px;
-    margin-bottom: 15px
-}
-
-.lists .list header h1 {
-    font-size: 1.8em
-}
-
-.lists .list h2 {
-    font-size: 1.5em;
-    text-align: center;
-    widows: 100%;
-    background-color: gainsboro;
-    padding: 5px 0;
-    color: dimgray;
-
-    border-radius: 0 0 10px 10px;
-}
-
-/*----------NAV------------*/
-
-nav,
-nav .container {
-    display: flex
-}
-
-nav {
+.carousel, .carousel-inner, .carousel-item{
+    height: 100%;
     width: 100%;
 }
 
-nav > h1 {
-    width: 8%;
-    font-size: 1em;
-    padding: 10px 5px;
-
-    word-break: keep-all;
-    text-align: center;
-
-    background-color: dimgray;
-    color: white
+.carousel-item > .container{
+    height: 100%
 }
 
-nav .container {
-    width: 92%;
+.carousel-item:nth-child(1){
+    background-color: #3498db
 }
 
-nav .container .topico {
-    flex-flow: row;
-    min-width: 180px;
+.carousel-item:nth-child(2){
+    background-color: #C75C5C
 }
 
-nav .container .topico img {
-    max-height: 25px
+.carousel-item:nth-child(3){
+    background-color: blueviolet
+}
+
+
+.carousel-indicators li{
+    cursor: pointer
 }
