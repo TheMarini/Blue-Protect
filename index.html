@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Trabalho de DIW</title>
+    <title>Blue Protect</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="assets/img/icon.png">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
@@ -18,17 +20,18 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-white navbar-light">
+    <nav class="navbar navbar-expand-sm bg-white navbar-light fixed-top navbar-default">
         <a class="navbar-brand" href="">
             <img src="assets/img/logo.svg" class="d-inline-block align-top" alt="Protect Logo">
             <h1>Blue <span>Protect</span></h1>
         </a>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" href="#">Início</a>
-                <a class="nav-link" href="#">Serviços</a>
-                <a class="nav-link" href="#">Blog</a>
-                <a class="nav-link" href="#">Contato</a>
+                <a class="nav-link active" href="#inicio">Início</a>
+                <a class="nav-link" href="#servicos">Serviços</a>
+                <a class="nav-link" href="#blog">Blog</a>
+                <a class="nav-link" href="#contato">Contato</a>
+                <a class="nav-item" href="#"><button type="button" class="btn btn-outline-primary btn-lg">Download gratuito</button></a>
             </div>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,12 +44,16 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="container _center-child">
-                        <p>O melhor antivírus do mundo!</p>
+                         <h1 class="maincontainer-p lead">Antivírus de última geração, protegendo o amanhã, hoje</h1><br><br>
+                        <p class="generic-p font-weight-light">Desenvolvido por uma combinação de inteligência artificial, tecnologias de nuvem e nosso scanner de vírus de terminal; protegemos seus dados privados contra todos os tipos de malware</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="container _center-child">
-                        <p>O melhor antivírus do mundo!</p>
+                        <h1 class="maincontainer-p lead">Blue Protect</h1><br>
+                        <p class="generic-p font-weight-light">Faça o download do melhor antivírus do mundo!</p><br>
+
+                        <button type="button" class="btn btn-primary btn-lg">Baixe agora</button>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -58,8 +65,30 @@
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" data-slide="prev">
+			    <span class="carousel-control-prev-icon"></span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" data-slide="next">
+			    <span class="carousel-control-next-icon"></span>
+			</a>
+        </div>
+
+        <div class="second-content">
+            <div class="container _center-child">
+                <h1 class="maincontainer-p lead">Avaliação dos usuários</h1><br><br>
+                <a href="https://www.trustpilot.com">
+                    <img src="assets/img/review.png">
+                </a>
+                <blockquote class="cite">
+                    <p>O antivírus considerado uma "potência contra ciber ameaças"</p>
+                    <cite>
+                        <a href="https://www.forbes.com">
+                            <img src="assets/img/forbes.png" class="img-cite">
+                        </a>
+                    </cite>
+                </blockquote>
+            </div>
         </div>
     </main>
 </body>

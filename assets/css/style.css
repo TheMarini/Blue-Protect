@@ -157,7 +157,42 @@ main {
     background-color: blueviolet
 }
 
-
 .carousel-indicators li{
     cursor: pointer
+}
+
+
+/*----------FORA------------*/
+
+.maincontainer-p {
+    font-size: 3rem;
+    text-align: center;
+}
+.generic-p {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.cite {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #C7C7C7;
+}
+
+.img-cite {
+    height: 2rem;
+}
+
+.second-content {
+    margin: 2rem;
+}
+
+.navbar-debug {
+    margin-top: 2.2rem;
+}
+
+.debug-slide {
+    font-size: 2.5rem;
 }
