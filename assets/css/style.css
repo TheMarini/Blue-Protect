@@ -14,7 +14,13 @@ a {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    overflow-x: hidden/* FIXME: gambs */
+}
+
+::-moz-selection {
+    color: whitesmoke;
+    background-color: black
 }
 
 ::selection {
@@ -43,121 +49,253 @@ input[type="submit"] {
 
 /*----------CLASSES------------*/
 
-._black-cover {
+._img-bg {
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
+    position: absolute !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0
 }
 
-._wrapper {
-    max-width: 1100px;
-    /* Espaço total do envolcro */
-    padding: 0 4vw;
-    /* Tamanho da barreira entre o contúdo interno e a borda da janela */
-    margin: auto/* Centralizar wrapper */
-}
+._blur {
+    -webkit-filter: blur(15px);
+    filter: blur(15px);
 
-._hide {
-    display: none;
-}
+    -webkit-transform: scale(1.1);
 
-._fade {
-    opacity: 0;
-}
-
-._round-border {
-    border-radius: 10px
+    transform: scale(1.1);
 }
 
 ._center-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
     flex-flow: column;
     /* Distribuição */
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     /* Alinhar horizontal (eixo X) */
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center/* Alinhar vertical (eixo Y) */
 }
 
-._center-X {
-    margin: auto
+/*----------NAV------------*/
+
+.navbar {
+    min-height: 80px;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
-._btn {
-    text-align: center;
-
-    background-color: transparent;
-    border: 2px solid;
-    font-size: 0.8em;
-    transition: 1s;
-
-    border-radius: 40px;
-    width: 150px;
-    height: 40px;
-
-    text-transform: uppercase;
-
-    font-weight: bold;
-}
-
-._btn:hover {
-    transform: scale(1.04, 1.04);
-}
-
-/*----------HEADER------------*/
-.navbar{
-    height: 12vh;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    z-index: 10
-}
-
-.navbar-brand{
+.navbar-brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.02);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.02);
+    position: fixed
 }
 
-.navbar-brand img{
+.navbar-brand img {
     height: 50px;
 }
 
-.navbar-brand h1{
+.navbar-brand h1 {
     font-size: 1.3em;
     margin: 0 5px;
     font-weight: 300
 }
 
-.navbar-brand span{
+.navbar-brand span {
     font-weight: 500
 }
 
-main {
-    height: 88vh;
-    width: 100%;
-    position: relative
+.navbar-nav {
+    font-size: 1.1em
 }
 
-.carousel, .carousel-inner, .carousel-item{
+/*----------MAIN------------*/
+
+main > section h1 {
+    font-size: 2.5rem
+}
+
+/*----------HEADER / CAROUSEL / SLIDER------------*/
+
+header {
+    height: 85vh;
+    width: 100%;
+    position: relative !important;
+
+}
+
+header > .container {
     height: 100%;
+    max-width: 900px;
+
+    color: white;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem !important;
+    font-weight: 900 !important
+}
+
+header h2 {
+    color: gainsboro
+}
+
+header h2 span {
+    text-decoration: underline;
+}
+
+header p {
+    font-size: 1.3rem !important;
+}
+
+/*----------SERVIÇOS------------*/
+
+#servicos {
+    background-color: white;
+    padding: 20px
+}
+
+/*----------AVALIACAO------------*/
+
+#avaliacao {
+    padding: 2rem;
+    background-color: #2980b9;
+}
+
+#avaliacao h1 {
+    color: white
+}
+
+.nota {
+
+    border-radius: 5px
+}
+
+#avaliacao blockquote {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.2em;
+    text-align: center;
+    color: dimgray;
+    background-color: whitesmoke;
+    border-radius: 5px
+}
+
+#avaliacao cite img {
+    height: 2rem;
+    border-radius: 5px;
+    border: 2px solid white
+}
+
+
+/*----------BLOG------------*/
+
+#blog {
+    background-color: whitesmoke;
+
+    padding: 30px 0;
+
+    -webkit-box-orient: vertical !important;
+
+    -webkit-box-direction: normal !important;
+
+    -ms-flex-flow: column !important;
+
+    flex-flow: column !important;
+}
+
+.post {
+    margin: 10px 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    max-width: 500px;
+}
+
+.post:hover {
+    -webkit-transform: scale(1.02, 1.02);
+    transform: scale(1.02, 1.02)
+}
+
+.conteudo {
+    padding: 15px;
+    color: black;
+    background-color: white;
+
+    min-height: 250px;
+
+
+    border-radius: 5px 5px 0 0
+}
+
+.conteudo h1 {
+    text-align: center;
+    font-weight: 500;
+}
+
+.conteudo p {
+    text-align: justify;
+
+    min-height: 150px
+}
+
+.post button {
     width: 100%;
+    padding: 10px;
+    color: white;
+    border-radius: 0 0 5px 5px;
+    background-color: #2980b9
 }
 
-.carousel-item > .container{
-    height: 100%
+#blog > button {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    text-transform: capitalize;
 }
 
-.carousel-item:nth-child(1){
-    background-color: #3498db
+/*----------CONTATO------------*/
+
+#contato {
+    background-color: #343a40;
+    padding: 20px;
+
+    color: white
 }
 
-.carousel-item:nth-child(2){
-    background-color: #C75C5C
+#contato button {
+    width: 100%;
+    padding: 10px
 }
 
-.carousel-item:nth-child(3){
-    background-color: blueviolet
-}
+/*----------MEDIAS------------*/
 
-
-.carousel-indicators li{
-    cursor: pointer
+@media (max-width: 600px) {
+    .navbar-brand {
+        position: static
+    }
 }
