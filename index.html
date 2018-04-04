@@ -19,19 +19,19 @@
     <script src="assets/js/script.js"></script>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-sm bg-white navbar-light fixed-top navbar-default">
+<body id="body">
+    <nav class="navbar navbar-expand-md bg-white navbar-light fixed-top navbar-default">
         <a class="navbar-brand" href="">
             <img src="assets/img/logo.svg" class="d-inline-block align-top" alt="Protect Logo">
             <h1>Blue <span>Protect</span></h1>
         </a>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" href="#inicio">Início</a>
+        <div class="collapse navbar-collapse justify-content-end">
+            <div class="navbar-nav d-flex align-items-center">
+                <a class="nav-link active" href="#body">Início</a>
                 <a class="nav-link" href="#servicos">Serviços</a>
                 <a class="nav-link" href="#blog">Blog</a>
                 <a class="nav-link" href="#contato">Contato</a>
-                <a class="nav-item" href="#"><button type="button" class="btn btn-outline-primary btn-lg">Download gratuito</button></a>
+                <a class="nav-item" href="#"><button type="button" class="btn btn-outline-primary btn-lg ml-2">Download gratuito</button></a>
             </div>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,57 +39,69 @@
         </button>
     </nav>
 
-    <main>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container _center-child">
-                         <h1 class="maincontainer-p lead">Antivírus de última geração, protegendo o amanhã, hoje</h1><br><br>
-                        <p class="generic-p font-weight-light">Desenvolvido por uma combinação de inteligência artificial, tecnologias de nuvem e nosso scanner de vírus de terminal; protegemos seus dados privados contra todos os tipos de malware</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container _center-child">
-                        <h1 class="maincontainer-p lead">Blue Protect</h1><br>
-                        <p class="generic-p font-weight-light">Faça o download do melhor antivírus do mundo!</p><br>
+    <main id="main">
+        <header class="container-fluid position-relative">
+            <div class="container _center-child">
+                <h1>Antivírus de última geração</h1>
+                <h2>protegendo o amanhã <span>hoje</span></h2>
+                <p class="font-weight-light m-4">Desenvolvido por uma combinação de inteligência artificial, tecnologias de nuvem e nosso scanner de vírus de terminal, protegemos seus dados privados contra todos os tipos de malware</p>
+            </div>
 
-                        <button type="button" class="btn btn-primary btn-lg">Baixe agora</button>
-                    </div>
+            <div class="_img-bg _blur" style="background-image: url('assets/img/Banner/bg-1.jpg')"></div>
+        </header>
+
+        <section id="blog" class="_center-child">
+            <h1>Notícia que fomos comentados</h1>
+            <div class="d-flex m-4">
+                <div class="post">
+                    <article class="conteudo">
+                        <h1 class="maincontainer-p lead">Blue Protect foi considerado o melhor antivírus de 2017</h1><br>
+                        <p class="generic-p font-weight-light">Mesmo ao ser comparado com grandes nomes da indústria de antivírus, o Blue Protect, com seus grandes diferenciais, foi considerado pela maioria dos usuários como o melhor antivírus grátis de 2017.</p>
+                    </article>
+                    <button>ler mais</button>
                 </div>
-                <div class="carousel-item">
-                    <div class="container _center-child">
-                        <p>O melhor antivírus do mundo!</p>
-                    </div>
+                <div class="post">
+                    <article class="conteudo">
+                        <h1 class="maincontainer-p lead">Blue Protect foi considerado o melhor antivírus de 2017</h1><br>
+                        <p class="generic-p font-weight-light">Mesmo ao ser comparado com grandes nomes da indústria de antivírus, o Blue Protect, com seus grandes diferenciais, foi considerado pela maioria dos usuários como o melhor antivírus grátis de 2017.</p>
+                    </article>
+                    <button>ler mais</button>
+                </div>
+                <div class="post">
+                    <article class="conteudo">
+                        <h1 class="maincontainer-p lead">Blue Protect foi considerado o melhor antivírus de 2017</h1><br>
+                        <p class="generic-p font-weight-light">Mesmo ao ser comparado com grandes nomes da indústria de antivírus, o Blue Protect, com seus grandes diferenciais, foi considerado pela maioria dos usuários como o melhor antivírus grátis de 2017.</p>
+                    </article>
+                    <button>ler mais</button>
+                </div>
+                <div class="post">
+                    <article class="conteudo">
+                        <h1 class="maincontainer-p lead">Blue Protect foi considerado o melhor antivírus de 2017</h1><br>
+                        <p class="generic-p font-weight-light">Mesmo ao ser comparado com grandes nomes da indústria de antivírus, o Blue Protect, com seus grandes diferenciais, foi considerado pela maioria dos usuários como o melhor antivírus grátis de 2017.</p>
+                    </article>
+                    <button>ler mais</button>
                 </div>
             </div>
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            </ol>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" data-slide="prev">
-			    <span class="carousel-control-prev-icon"></span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleIndicators" data-slide="next">
-			    <span class="carousel-control-next-icon"></span>
-			</a>
-        </div>
+            <button class="btn">ver tudo</button>
+        </section>
 
-        <div class="second-content">
-            <div class="container _center-child">
-                <h1 class="maincontainer-p lead">Avaliação dos usuários</h1><br><br>
+
+        <section id="avaliacao" class="container-fluid bg-white">
+            <div class="_center-child">
+                <h1 class="lead">Avaliação dos nossos clientes</h1><br><br>
                 <a href="https://www.trustpilot.com">
                     <img src="assets/img/review.png">
                 </a>
-                <blockquote class="cite">
-                    <p>O antivírus considerado uma "potência contra ciber ameaças"</p>
+                <blockquote>
+                    <p>"O antivírus considerado uma potência contra ciber ameaças"</p>
                     <cite>
                         <a href="https://www.forbes.com">
-                            <img src="assets/img/forbes.png" class="img-cite">
+                            <img src="assets/img/forbes.png">
                         </a>
                     </cite>
                 </blockquote>
             </div>
-        </div>
+        </section>
     </main>
 </body>
 

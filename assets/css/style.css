@@ -14,7 +14,8 @@ a {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    overflow-x: hidden /* FIXME: gambs */
 }
 
 ::selection {
@@ -43,11 +44,23 @@ input[type="submit"] {
 
 /*----------CLASSES------------*/
 
-._black-cover {
+._img-bg {
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
+    position: absolute !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0
+}
+
+._blur {
+    filter: blur(15px);
+
+    transform: scale(1.1);
 }
 
 ._wrapper {
@@ -58,18 +71,6 @@ input[type="submit"] {
     margin: auto/* Centralizar wrapper */
 }
 
-._hide {
-    display: none;
-}
-
-._fade {
-    opacity: 0;
-}
-
-._round-border {
-    border-radius: 10px
-}
-
 ._center-child {
     display: flex;
     flex-flow: column;
@@ -77,10 +78,6 @@ input[type="submit"] {
     align-items: center;
     /* Alinhar horizontal (eixo X) */
     justify-content: center/* Alinhar vertical (eixo Y) */
-}
-
-._center-X {
-    margin: auto
 }
 
 ._btn {
@@ -104,95 +101,153 @@ input[type="submit"] {
     transform: scale(1.04, 1.04);
 }
 
-/*----------HEADER------------*/
-.navbar{
-    height: 12vh;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    z-index: 10
+/*----------NAV------------*/
+
+.navbar {
+    height: 80px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
-.navbar-brand{
+.navbar-brand {
     display: flex;
     align-items: center
 }
 
-.navbar-brand img{
+.navbar-brand img {
     height: 50px;
 }
 
-.navbar-brand h1{
+.navbar-brand h1 {
     font-size: 1.3em;
     margin: 0 5px;
     font-weight: 300
 }
 
-.navbar-brand span{
+.navbar-brand span {
     font-weight: 500
 }
 
-main {
-    height: 88vh;
-    width: 100%;
-    position: relative
+.navbar-nav{
+    font-size: 1.1em
 }
 
-.carousel, .carousel-inner, .carousel-item{
+/*----------NAV------------*/
+
+
+
+/*----------HEADER / CAROUSEL / SLIDER------------*/
+
+header{
+    height: 85vh;
+    width: 100%;
+    position: relative !important;
+    margin-top: 80px;
+
+}
+
+header > .container {
     height: 100%;
+    max-width: 900px;
+
+    color: white;
+    text-shadow: 2px 2px rgba(0,0,0,0.1);
+
+    text-align: center;
+}
+
+header h1{
+    font-size: 3rem !important;
+    font-weight: 900 !important
+}
+
+header h2{
+    color: gainsboro
+}
+
+header h2 span{
+    text-decoration: underline;
+}
+
+header p{
+    font-size: 1.3rem !important;
+}
+
+/*----------BLOG------------*/
+#blog{
+    background-color: #2980b9;
+
+    padding: 30px 80px;
+
+    flex-flow: column !important;
+}
+
+#blog > h1{
+    color: white;
+}
+
+.post{
+    margin: 10px;
+    transition: 0.3s;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.post:hover{
+    transform: scale(1.02,1.02)
+}
+
+.conteudo{
+    padding: 15px;
+
+    background-color: white;
+
+
+    border-radius: 5px 5px 0 0
+}
+
+.conteudo h1{
+    text-align: center
+}
+
+.conteudo p{
+    text-align: justify
+}
+
+.post button{
     width: 100%;
+    padding: 10px;
+    background-color: #7f8c8d;
+    color: white;
+    border-radius: 0 0 5px 5px
 }
 
-.carousel-item > .container{
-    height: 100%
-}
-
-.carousel-item:nth-child(1){
-    background-color: #3498db
-}
-
-.carousel-item:nth-child(2){
-    background-color: #C75C5C
-}
-
-.carousel-item:nth-child(3){
-    background-color: blueviolet
-}
-
-.carousel-indicators li{
-    cursor: pointer
+#blog > button{
+    width: 400px;
+    padding: 10px;
 }
 
 
-/*----------FORA------------*/
+/*----------AVALIACAO------------*/
 
-.maincontainer-p {
-    font-size: 3rem;
-    text-align: center;
-}
-.generic-p {
-    font-size: 1.3rem;
-    text-align: center;
+#avaliacao {
+    padding: 2rem;
 }
 
-.cite {
+#avaliacao h1{
+    font-size: 3rem
+}
+
+#avaliacao blockquote{
     margin-top: 1rem;
     padding: 1rem;
-    border-radius: 10px;
     text-align: center;
-    background-color: #C7C7C7;
+    color: white;
+    background-color: dimgray;
+    border-radius: 5px
 }
 
-.img-cite {
+#avaliacao cite img{
     height: 2rem;
-}
-
-.second-content {
-    margin: 2rem;
-}
-
-.navbar-debug {
-    margin-top: 2.2rem;
-}
-
-.debug-slide {
-    font-size: 2.5rem;
+    border-radius: 50px;
+    border: 2px solid whitesmoke
 }
