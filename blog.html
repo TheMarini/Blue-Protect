@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blue Protect - Blog</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="assets/img/icon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+    <script src="assets/js/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-white navbar-light navbar-default">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/logo.svg" class="d-inline-block align-top" alt="Protect Logo">
+            <h1>Blue <span>Protect</span></h1>
+        </a>
+        <div class="collapse navbar-collapse justify-content-end" id="menu">
+            <ul class="navbar-nav d-flex align-items-center">
+                <li class="nav-item"><a class="nav-link" href="index.html">Página inicial</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" id="profile" href="#" aria-haspopup="true" aria-expanded="false">Meu Perfil</a>
+                    <div class="dropdown-menu" id="dropdown-item"></div>
+                </li>
+                <li class="nav-item"><button type="button" class="btn btn-light login-button" id="entrar" data-toggle="modal" data-target="#login-modal">Entrar</button></li>
+
+            </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <header style="height:250px;">
+        <div class="container _center-child" style="height:250px">
+            <h1 class="headertext">Blog</h1>
+            <h2 class="headertext">Fique por dentro das novidades sobre o Blue Protect</h2>
+        </div>
+
+        <div class="_img-bg" id="papelfundo" style="background-image: url('assets/img/Banner/bg-5.jpg');height: 250px; opacity: 0.6;"></div>
+    </header>
+
+    <!-- MODAL DE LOGIN -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="assets/img/logo.svg" alt="logo Blue Protect" id="img-modal">
+                    <h5 class="modal-title" id="modal-login-title">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div id="msg-login" class="col-sm-10 offset-sm-1 ">
+                                <!-- <div class="alert alert-warning"> oi </div> -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-input">E-mail</label>
+                            <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Digite o seu e-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha-input">Senha</label>
+                            <input type="password" class="form-control" id="senha-input" placeholder="Digite a sua senha">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="remember-me">
+                            <label class="form-check-label" for="remember-me">Lembrar-me</label>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" id="login-button">Entrar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span class="mr-3">Ainda não tem um conta no Blue Protect?</span>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#signup-modal">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="assets/img/logo.svg" alt="logo Blue Protect" id="img-modal">
+                    <h5 class="modal-title" id="modal-login-title">Faça o seu cadastro!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-signup">
+                        <div class="row">
+                            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                                <!-- <div class="alert alert-warning"> oi </div> -->
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label for="email-input-signup">E-mail</label>
+                                <input type="text" class="form-control" id="email-input-signup" placeholder="Digite um e-mail válido" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label for="nome-input">Nome</label>
+                                <input type="text" class="form-control" id="nome-input" placeholder="Digite o seu nome" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="input-senha">Senha</label>
+                                <input type="password" class="form-control" id="input-senha" placeholder="Senha" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="input-senha-confirm">Confirme a sua senha</label>
+                                <input type="password" class="form-control" id="input-senha-confirm" placeholder="Confirmar senha" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                <label class="form-check-label" for="invalidCheck2">
+                                    Concordo com os <a href="#" class="termo-uso">termos de uso</a> do Blue Protect
+                                </label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" id="signup-button">Cadastrar</button>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <b>Registre-se no melhor antivírus gratuito para Windows/Mac Os</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE COMENTAR -->
+    <div class="modal fade" id="modalcomentar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postnameComment">Título do post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formcomment">
+                        <div class="form-group">
+                            <label for="usernamecomment" class="col-form-label">Username</label>
+                            <input type="text" class="form-control" id="usernamecomment" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="textcomment" class="col-form-label">Comentário</label>
+                            <textarea class="form-control" id="textcomment"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="submitcomment">Comentar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de comentários-->
+    <div class="modal fade" id="commentsmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalcommentstitle">Titulo Post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalcommentsbody">
+                    <div class="divcomments">
+                        <h1 class="mb-2 commenttitleusername">Username <span class="spandata">dd/mm/aa hh:mm</span></h1>
+                        <p class="ml-3">Comentário</p>
+                    </div>
+                    <div class="divcomments">
+                        <h1 class="mb-2 commenttitleusername">Username <span class="spandata">dd/mm/aa hh:mm</span></h1>
+                        <p class="ml-3">Comentário</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div id="postsD">
+            <div class="col-sm-8 offset-sm-2 posts-container mb-5">
+                <div class="row posts-container" id="postsDS">
+                    <div class="col-sm-6 img-container">
+                        <img src="https://cdnbr2.img.sputniknews.com/images/983/34/9833495.jpg" class="box-img">
+                    </div>
+                    <div class="col-sm-6 content-container">
+                        <h2>ID: 1</h2><h1 class="post-blog-title">Título do post</h1>
+                        <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, <p>
+                        <div style="padding:15px;">
+                            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalcomentar">Comentar</button>
+                            <button type="button" class="btn btn-primary btn-sm">Comentários</button>
+                            <button><span class="badge badge-secondary"><img src="assets/img/likeicon.svg" class="like-button">Like (10)</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div>
+
+
+
+
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/database.js"></script>
+        <script src="assets/js/signup.js"></script>
+        <script src="assets/js/login.js"></script>
+        <script src="assets/js/indexbodyload.js"></script>
+        <!--<script src="assets/js/admbodyload.js"></script>-->
+        <script src="assets/js/postscontrol.js"></script>
+        <script src="assets/js/blog.js"></script>
+    </main>
+</body>
+</html>

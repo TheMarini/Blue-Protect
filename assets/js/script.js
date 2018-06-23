@@ -1,17 +1,4 @@
 $(function () {
-    var previousScroll = 0;
-    
-    $(window).scroll(function () {
-       var currentScroll = $(this).scrollTop();
-       if (currentScroll > previousScroll){
-           //$('#navbar').css('height', '20px');
-       }
-       else {
-          //$('#navbar').css('height', '80px');
-       }
-       previousScroll = currentScroll;
-    });
-    
     /* SMOOTH SCROLL LINK*/
     // Select all links with hashes
     $('a[href*="#"]')
@@ -49,3 +36,21 @@ $(function () {
             }
         });
 });
+
+function dataAtualFormatada(){
+    var data = new Date();
+    var dia = data.getDate();
+    if (dia.toString().length == 1)
+      dia = "0"+dia;
+    var mes = data.getMonth()+1;
+    if (mes.toString().length == 1)
+      mes = "0"+mes;
+    var ano = data.getFullYear();
+    var hora = data.getHours();
+    if (hora.toString().length == 1)
+      hora = "0"+hora;
+    var minutos = data.getMinutes();
+    if (minutos.toString().length == 1)
+      minutos = "0"+minutos;
+    return dia+"/"+mes+"/"+ano+" "+hora+":"+minutos;
+}

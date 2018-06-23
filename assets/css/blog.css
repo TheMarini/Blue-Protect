@@ -1,0 +1,53 @@
+main {
+    background-color: #DDDDDD;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.posts-container {
+    border: solid 1px grey;
+}
+
+.img-container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.box-img {
+  height: 100%;
+  /* max-height: 362px; */
+  width: 100%;
+}
+
+.content-container {
+    padding-left: 15px;
+    padding-right: 0;
+    padding-top: 15px;
+    background-color: white;
+}
+
+.like-button {
+    width:20px;
+    padding-right:5px;
+}
+
+.post-blog-title {
+    font-size:1.3rem;
+}
+
+.commenttitleusername {
+    font-size:1.10rem;
+
+}
+
+.divcomments {
+    border: solid 1px #e9ecef;
+    margin:4px 4px 15px 4px;
+    padding-left:6px;
+}
+
+.spandata {
+    font-size: 0.8rem;
+    color: #a9a9a9;
+    margin-left: 3px;
+}

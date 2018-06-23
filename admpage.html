@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Administrador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="assets/img/icon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/admpage.css">
+    <script src="assets/js/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md bg-white navbar-light navbar-default">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/logo.svg" class="d-inline-block align-top" alt="Protect Logo">
+            <h1>Blue <span>Protect</span></h1>
+        </a>
+        <div class="collapse navbar-collapse justify-content-end" id="menu">
+            <ul class="navbar-nav d-flex align-items-center">
+                <li class="nav-item active"><a class="nav-link" href="">Gestão do Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Ir para o Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Página inicial</a></li>
+                <li class="nav-item ml-4"><span class="badge badge-info admplace">Administrador<br><div id="admname" class="mt-1"></div></span><img src="assets/img/admicon.svg" class="admicon ml-2"></li>
+            </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <header style="height:250px;">
+        <div class="container _center-child" style="height:250px">
+            <h1 class="headertext">Blog</h1>
+            <h2 class="headertext">Gestão e controle de postagens</h2>
+        </div>
+
+        <div class="_img-bg" id="papelfundo" style="background-image: url('assets/img/Banner/bg-4.jpg');height: 250px; opacity: 0.6;"></div>
+    </header>
+
+    <main class="container my-4">
+        <section>
+            <h1 class="my-4"><img src="assets/img/blog.svg" style="width:50px;"><span class="badge badge-dark ml-2">Criação de Posts</span></h1>
+
+            <form id="addpost" class="container form-rounded banana">
+                <div class="form-group">
+                    <label for="titulopost"><b>Título do Post</b></label>
+                    <input type="text" class="form-control" id="titulopost" placeholder="Digite um título para o seu Post">
+                </div>
+
+                <div class="form-group">
+                    <label for="admpost"><b>Administrador redator</b></label>
+                    <input type="text" class="form-control" id="admpost" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="imgpost"><b>URL da Imagem do Post</b></label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <img src="assets/img/photoicon.svg" style="width:25px">
+                            </span>
+                        </div>
+                        <input type="url" class="form-control" id="imgpost" aria-describedby="basic-addon1" placeholder="URL">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="textopost"><b>Texto do Post</b></label>
+                    <textarea class="form-control" id="textopost" rows="10"></textarea>
+                </div>
+                <button class="btn btn-info btn-block mb-2 mt-4" id="btnInsert"><b>Criar um novo Post no Blog</b></button>
+            </form>
+        </section>
+
+        <section>
+            <h1 class="my-4"><img src="assets/img/postsmanager.svg" style="width:50px;"><span class="badge badge-dark ml-2">Gestão dos Posts</span></h1>
+            <div class="posts-list container banana">
+                <h1 class="posts-title">Posts do Blog Blue Protect</h1>
+                <table id="grid-contatos" class="table table-hover format-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Post-ID</th>
+                            <th scope="col">Título do Post</th>
+                            <th scope="col" style="text-align: center;">Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-contatos">
+                        <tr>
+                            <td scope="row"></td>
+                            <td scope="row"></td>
+                            <td scope="row"></td>
+                        </tr>
+                    </tbody>
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-info" type="button" style="cursor: default;" disabled>ID do post Selecionado:</button>
+                        </div>
+                        <input type="text" class="form-control" id="inputId" placeholder="Clique em um post para selecionar" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                    <button class="btn btn-danger btn-block mb-3" id="btnDelete"><b>Apagar um Post</b></button>
+                    <button class="btn btn-warning btn-block mb-3" id="btnUpdate"><b>Ativar/Desativar um Post</b></button>
+                </table>
+            </div>
+        </section>
+
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/database.js"></script>
+        <script src="assets/js/signup.js"></script>
+        <script src="assets/js/login.js"></script>
+        <script src="assets/js/admbodyload.js"></script>
+        <script src="assets/js/postscontrol.js"></script>
+
+    </main>
+</body>
+</html>

@@ -1,4 +1,4 @@
-﻿/*----------NORMATIZAÇÃO------------*/
+/*----------NORMATIZAÇÃO------------*/
 
 * {
     margin: 0;
@@ -61,7 +61,6 @@ input[type="submit"] {
     left: 0
 }
 
-/* NOTE: needs overflow hidden on parent */
 ._blur {
     -webkit-filter: blur(15px);
     filter: blur(15px);
@@ -89,12 +88,13 @@ input[type="submit"] {
     justify-content: center/* Alinhar vertical (eixo Y) */
 }
 
+
 /*----------NAV------------*/
 
 .navbar {
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
+    z-index: 10;
     min-height: 10vh;
 }
 
@@ -105,11 +105,6 @@ input[type="submit"] {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    padding: 5px;
-    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.02);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.02);
 }
 
 .navbar-brand img {
@@ -130,6 +125,28 @@ input[type="submit"] {
     font-size: 1.1em
 }
 
+.login-button {
+    margin: 7px 5px;
+    background-color: white;
+    border: 1px solid darkgray;
+}
+
+#img-modal {
+   margin:  0px 10px;
+   width: 2.5rem;
+}
+
+#modal-login-title {
+    font-size: 1.5rem;
+}
+
+.termo-uso {
+    color: #007bff;
+
+}
+
+/*----------USERBAR---------*/
+
 /*----------MAIN------------*/
 
 main > section h1 {
@@ -139,12 +156,10 @@ main > section h1 {
 /*----------HEADER / CAROUSEL / SLIDER------------*/
 
 header {
-    height: 90vh;
+    height: 85vh;
     width: 100%;
     position: relative !important;
-    overflow: hidden;
-    margin-top: 75px
-
+    overflow: hidden
 }
 
 header > .container {
@@ -163,7 +178,7 @@ header h1 {
 }
 
 header h2 {
-    color: gainsboro
+    /*color: gainsboro*/
 }
 
 header h2 span {
@@ -181,6 +196,10 @@ header p {
     padding: 20px
 }
 
+.servicos {
+    background-color: white;
+    padding: 20px
+}
 /*----------AVALIACAO------------*/
 
 #avaliacao {
@@ -293,6 +312,47 @@ header p {
     padding: 10px
 }
 
+#maps {
+    height: 400px;
+    width: 100%;
+    border-radius: 15px;
+    border: solid 7px white;
+}
+
+#contact-hr {
+    border-radius: 3px;
+    background-color: white;
+}
+
+#adress-div {
+    background-color: white;
+    /*height: 150px;*/
+    width: 100%;
+    border-left:solid 10px teal;
+    border-radius: 0 20px 20px 0;
+    padding: 10px;
+}
+
+.box-title {
+    color: #343a40;
+}
+
+.box-content {
+    color:#343a40;
+    margin-left: 20px;
+}
+
+.content-title {
+    font-size: 120%;
+}
+
+.content-content {
+    margin-left: 20px;
+}
+
+.adress {
+    margin-bottom: 0;
+}
 /*----------MEDIAS------------*/
 
 @media (max-width: 600px) {

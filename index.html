@@ -13,36 +13,152 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
+    <script src="assets/js/popper.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
+
 </head>
 
 <body id="body">
-    <nav class="navbar navbar-expand-md bg-white navbar-light navbar-default fixed-top">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-md bg-white navbar-light navbar-default">
+        <a class="navbar-brand" href="index.html">
             <img src="assets/img/logo.svg" class="d-inline-block align-top" alt="Protect Logo">
             <h1>Blue <span>Protect</span></h1>
         </a>
-        <nav class="collapse navbar-collapse justify-content-end" id="navbar">
-            <div class="navbar-nav d-flex align-items-center">
-                <a class="nav-link active" href="#body">Início</a>
-                <a class="nav-link" href="#servicos">Serviços</a>
-                <a class="nav-link" href="#blog">Blog</a>
-                <a class="nav-link" href="#contato">Contato</a>
-                <a class="nav-item" href="#body"><button type="button" class="btn btn-outline-primary btn-lg ml-2">Download gratuito</button></a>
-            </div>
-        </nav>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="collapse navbar-collapse justify-content-end" id="menu">
+            <ul class="navbar-nav d-flex align-items-center">
+                <li class="nav-item"><a class="nav-link active" href="#body">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" id="profile" href="#" aria-haspopup="true" aria-expanded="false">Meu Perfil</a>
+                    <div class="dropdown-menu" id="dropdown-item"></div>
+                </li>
+                <li class="nav-item"><button type="button" class="btn btn-light login-button" id="entrar" data-toggle="modal" data-target="#login-modal">Entrar</button></li>
+                <li class="nav-item"><a class="nav-item" href="#body"><button type="button" class="btn btn-outline-primary btn-lg ml-2">Download gratuito</button></a></li>
+            </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
 
+    <!-- MODAL DE LOGIN -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="assets/img/logo.svg" alt="logo Blue Protect" id="img-modal">
+                    <h5 class="modal-title" id="modal-login-title">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div id="msg-login" class="col-sm-10 offset-sm-1 ">
+                                <!-- <div class="alert alert-warning"> oi </div> -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-input">E-mail</label>
+                            <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Digite o seu e-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha-input">Senha</label>
+                            <input type="password" class="form-control" id="senha-input" placeholder="Digite a sua senha">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="remember-me">
+                            <label class="form-check-label" for="remember-me">Lembrar-me</label>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" id="login-button">Entrar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span class="mr-3">Ainda não tem um conta no Blue Protect?</span>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#signup-modal">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="assets/img/logo.svg" alt="logo Blue Protect" id="img-modal">
+                    <h5 class="modal-title" id="modal-login-title">Faça o seu cadastro!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-signup">
+                        <div class="row">
+                            <div id="msg" class="col-sm-10 offset-sm-1 ">
+                                <!-- <div class="alert alert-warning"> oi </div> -->
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label for="email-input-signup">E-mail</label>
+                                <input type="text" class="form-control" id="email-input-signup" placeholder="Digite um e-mail válido" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label for="nome-input">Nome</label>
+                                <input type="text" class="form-control" id="nome-input" placeholder="Digite o seu nome" required>
+                            </div>
+                        <!--
+                            <div class="col-md-6 mb-3">
+                                <label for="username-input">Nome de usuário</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="username-input" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+                                </div>
+                            </div>    -->
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="input-senha">Senha</label>
+                                <input type="password" class="form-control" id="input-senha" placeholder="Senha" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="input-senha-confirm">Confirme a sua senha</label>
+                                <input type="password" class="form-control" id="input-senha-confirm" placeholder="Confirmar senha" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                <label class="form-check-label" for="invalidCheck2">
+                                    Concordo com os <a href="#" class="termo-uso">termos de uso</a> do Blue Protect
+                                </label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" id="signup-button">Cadastrar</button>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <b>Registre-se no melhor antivírus gratuito para Windows/Mac Os</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <main id="main">
         <header class="container-fluid position-relative">
             <div class="container _center-child">
-                <h1>Antivírus de última geração</h1>
+                <h1 style="text-shadow: black 0.1em 0.1em 0.2em">Antivírus de última geração</h1>
                 <h2>protegendo o amanhã <span>hoje</span></h2>
                 <p class="font-weight-light m-4">Desenvolvido por uma combinação de inteligência artificial, tecnologias de nuvem e nosso scanner de vírus de terminal, protegemos seus dados privados contra todos os tipos de malware</p>
             </div>
@@ -116,14 +232,14 @@
                             <h1 class="lead">Blue Protect foi considerado o melhor antivírus de 2017</h1><br>
                             <p class="font-weight-light">Mesmo ao ser comparado com grandes nomes da indústria de antivírus, o Blue Protect, com seus grandes diferenciais, foi considerado pela maioria dos usuários como o melhor antivírus grátis de 2017.</p>
                         </article>
-                        <button class="btn-primary">ler mais</button>
+                        <button class="btn-primary" onclick="blogredirect()">ler mais</button>
                     </div>
                     <div class="post col-md">
                         <article class="conteudo">
                             <h1 class="lead">Vírus que rouba senha é espalhado por hackers no YouTube. Saiba como o Blue Protect pode te ajudar</h1><br>
                             <p class="font-weight-light">Cibercriminosos estão espalhando um tipo de malware capaz de roubar senhas em comentários de vídeos no YouTube. Desenvolvido em Python, o trojan PWS.Stealer.23012 chega às vítimas por meio de um link. Para se proteger desse malware, faça o download do Blue Protect, que já dispõe de proteção contra ele.</p>
                         </article>
-                        <button class="btn-primary">ler mais</button>
+                        <button class="btn-primary" onclick="blogredirect()">ler mais</button>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center align-items-center">
@@ -132,19 +248,19 @@
                             <h1 class="lead">Blue Protect é o primeiro antivírus a oferecer suporte à mineração de criptomoedas</h1><br>
                             <p class="font-weight-light">Em sua última atualização, o Blue Protect passou a ser compatível com softwares de mineração de criptomoedas, como o CGMines e o Bitminer. Dessa forma, os usuários poderão investir na atividade sem comprometer a sua segurança na rede.</p>
                         </article>
-                        <button class="btn-primary">ler mais</button>
+                        <button class="btn-primary" onclick="blogredirect()">ler mais</button>
                     </div>
                     <div class="post col-md">
                         <article class="conteudo">
                             <h1 class="lead">Blue Protect é perfeito para pequenas e médias empresas</h1><br>
                             <p class="font-weight-light">A assinatura do plano Premier do Antivírus Blue Protect é o ideal para empresas, sobretudo as que não disponibilizam de grandes verbas para o investimento em segurança da informação. Dessa forma, pequenas e médias empresas têm acesso a um software que promete privacidade por um preço corporativo acessível.</p>
                         </article>
-                        <button class="btn-primary">ler mais</button>
+                        <button class="btn-primary" onclick="blogredirect()">ler mais</button>
                     </div>
 
                 </div>
             </div>
-            <button class="btn btn-dark">ver tudo</button>
+            <button class="btn btn-dark" onclick="blogredirect()">ver tudo</button>
         </section>
 
         <section id="contato" class="container-fluid">
@@ -154,18 +270,45 @@
                     <div class="form-group mx-sm-3 mb-2 ">
                         <label for="sel1">Tipo de Comunicação:</label>
                         <select class="form-control" id="sel1">
-                   <option>Dúvidas</option>
-                   <option>Sugestões</option>
-                   <option>Críticas</option>
-                </select><br>
+                            <option>Dúvidas</option>
+                            <option>Sugestões</option>
+                            <option>Críticas</option>
+                        </select><br>
                         <textarea class="form-control" rows="1" id="nome" placeholder="Nome"></textarea><br>
                         <textarea class="form-control" rows="1" id="assunto" placeholder="Assunto"></textarea><br>
+                        <textarea class="form-control" rows="1" id="texto" placeholder="E-mail"></textarea><br>
                         <textarea class="form-control" rows="5" id="texto" placeholder="Comentário"></textarea><br>
                         <button class="btn btn-success">Enviar</button>
+                    </div>
                 </form>
-        </section>
-        </div>
+                <hr class="mt-5 mb-4" id="contact-hr">
+                <h3 class="text-center m-3">Venha conhecer a nossa sede!</h2>
+                <div id="maps" class="mt-3"></div>
+                <div class="mt-4" id="adress-div">
+                    <h3 class="box-title">Centro de desenvolvimento do Blue Protect</h3>
+                    <div class="box-content">
+                        <span class="content-title"><b>PUC Minas - Praça da Liberdade</b></span>
+                        <div class="content-content">
+                            <p class="adress">Rua Cláudio Manoel, 1162 - Savassi</p>
+                            <p class="adress">Belo Horizonte - Minas Gerais</p>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+        </section>
+
+
+        <!-- scripts -->
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/database.js"></script>
+        <script src="assets/js/signup.js"></script>
+        <script src="assets/js/login.js"></script>
+        <script src="assets/js/indexbodyload.js"></script>
+        <script src="assets/js/googlemaps.js"></script>
+
+        </script>
+        <script async defer src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgo0YbxxbPREC-7zv-zFGO1Q0RoseceUg&callback=initMap"></script>
     </main>
 </body>
 
