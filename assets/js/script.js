@@ -1,4 +1,17 @@
 $(function () {
+    var previousScroll = 0;
+    
+    $(window).scroll(function () {
+       var currentScroll = $(this).scrollTop();
+       if (currentScroll > previousScroll){
+           //$('#navbar').css('height', '20px');
+       }
+       else {
+          //$('#navbar').css('height', '80px');
+       }
+       previousScroll = currentScroll;
+    });
+    
     /* SMOOTH SCROLL LINK*/
     // Select all links with hashes
     $('a[href*="#"]')
